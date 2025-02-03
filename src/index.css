@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f0f0f0; /* Cambiado a un fondo más claro */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +25,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* Cambiado a columna para que el header y footer se mantengan en su lugar */
   min-width: 320px;
   min-height: 100vh;
 }

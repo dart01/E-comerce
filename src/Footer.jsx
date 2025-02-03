@@ -10,7 +10,7 @@ const FooterContainer = styled.footer`
   background-color: rgb(104, 103, 103);
   color: #fff;
   text-align: center;
-  width: 100%; /* Ensure full width */
+  width: 95%; /* Ensure full width */
   
   bottom: 0; /* Align to the bottom */
   z-index: 1000; /* Ensure it is above other content */
