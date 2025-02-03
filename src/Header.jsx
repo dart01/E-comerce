@@ -3,7 +3,7 @@ import logo from './imagenes/logo.jpg'; // Importing the logo image
 
 const HeaderContainer = styled.header`
   display: flex;
- 
+  justify-content: center;
   align-items: center;
   width: 95%; /* Cambiado a 100% para ocupar todo el ancho */
   padding: 1rem 2rem;
@@ -18,15 +18,12 @@ const HeaderContainer = styled.header`
 const Logo = styled.img`
   height: 50px; /* Adjust height as needed */
   object-fit: contain; /* Maintain aspect ratio */
-  
-  margin: 0 auto; /* Center the logo */
-  flex: 1; /* Allow the logo to take available space */
 `;
 
 const Nav = styled.nav`
   display: flex;
-  
-  flex: 1;
+  flex: 0 1 auto; /* Adjusted to prevent it from taking all available space */
+  justify-content: center; /* Center the navigation items */
 `;
 
 const NavItem = styled.div`
@@ -59,12 +56,14 @@ const CartIcon = styled.div`
 const Header = () => {
   return (
     <HeaderContainer>
-      <Nav>
-        <NavItem>Inicio</NavItem>
-        <NavItem>Productos</NavItem>
-        <NavItem>Contacto</NavItem>
-      </Nav>
-      <Logo src={logo} alt="Tienda Minimalista Logo" /> {/* Updated to use logo image */}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+        <Nav>
+          <NavItem>Inicio</NavItem>
+          <NavItem>Productos</NavItem>
+          <NavItem>Contacto</NavItem>
+        </Nav>
+        <Logo src={logo} alt="Tienda Minimalista Logo" /> {/* Updated to use logo image */}
+      </div>
       <UserCartContainer>
         <UserIcon>👤</UserIcon>
         <CartIcon>🛒</CartIcon>
