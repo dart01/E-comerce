@@ -1,10 +1,9 @@
-// Header.jsx
-
 import styled from 'styled-components';
+import logo from './imagenes/logo.jpg'; // Importing the logo image
 
 const HeaderContainer = styled.header`
   display: flex;
-  justify-content: space-between;
+ 
   align-items: center;
   width: 95%; /* Cambiado a 100% para ocupar todo el ancho */
   padding: 1rem 2rem;
@@ -16,16 +15,17 @@ const HeaderContainer = styled.header`
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
 `;
 
-const Logo = styled.h1`
-  flex: 1;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #fff; /* Cambiado a blanco para mejor contraste */
+const Logo = styled.img`
+  height: 50px; /* Adjust height as needed */
+  object-fit: contain; /* Maintain aspect ratio */
+  
+  margin: 0 auto; /* Center the logo */
+  flex: 1; /* Allow the logo to take available space */
 `;
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
+  
   flex: 1;
 `;
 
@@ -64,7 +64,7 @@ const Header = () => {
         <NavItem>Productos</NavItem>
         <NavItem>Contacto</NavItem>
       </Nav>
-      <Logo>Tienda Minimalista</Logo>
+      <Logo src={logo} alt="Tienda Minimalista Logo" /> {/* Updated to use logo image */}
       <UserCartContainer>
         <UserIcon>👤</UserIcon>
         <CartIcon>🛒</CartIcon>
