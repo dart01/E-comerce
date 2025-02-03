@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import promoImage from './imagenes/image.png'; // Assuming the promotional image is logo.jpg
+import promoImage from './imagenes/imagen.jpg'; // Assuming the promotional image is logo.jpg
 
 const PropagandaContainer = styled.div`
   margin: 0; /* Remove default margin */

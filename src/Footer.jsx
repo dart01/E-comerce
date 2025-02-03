@@ -1,5 +1,6 @@
-// Footer.jsx
+// FooterUpdated.jsx
 import styled from 'styled-components';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'; // Importing social media icons
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -10,7 +11,7 @@ const FooterContainer = styled.footer`
   color: #fff;
   text-align: center;
   width: 100%; /* Ensure full width */
-  position: fixed; /* Fix to the bottom */
+  
   bottom: 0; /* Align to the bottom */
   z-index: 1000; /* Ensure it is above other content */
 `;
@@ -33,6 +34,10 @@ const FooterText = styled.p`
   margin: 0.5rem 0;
 `;
 
+const SocialMediaLinks = styled.div`
+  margin: 1rem 0;
+`;
+
 const Footer = () => {
   return (
     <FooterContainer>
@@ -41,6 +46,17 @@ const Footer = () => {
         <FooterLink href="/terms-of-service">Términos de Servicio</FooterLink>
         <FooterLink href="/contact">Contacto</FooterLink>
       </FooterLinks>
+      <SocialMediaLinks>
+        <FooterLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <FaFacebook size={24} />
+        </FooterLink>
+        <FooterLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <FaInstagram size={24} />
+        </FooterLink>
+        <FooterLink href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <FaTwitter size={24} />
+        </FooterLink>
+      </SocialMediaLinks>
       <FooterText>&copy; 2023 Tienda Minimalista. Todos los derechos reservados.</FooterText>
     </FooterContainer>
   );
