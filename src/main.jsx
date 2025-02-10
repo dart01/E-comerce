@@ -24,9 +24,8 @@ createRoot(document.getElementById('root')).render(
         } />
         <Route path="/cart" element={
           <>
-            <Header />
-            <ShoppingCart />
-            <Whatsapp />
+            <Header />           
+            <ShoppingCart />            
             <Footer />
           </>
         } />
