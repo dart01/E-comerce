@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import Login from './login.jsx';
 import logo from './imagenes/logo.jpg';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -28,7 +30,7 @@ const Nav = styled.nav`
   justify-content: flex-start;
 `;
 
-const NavItem = styled(Link)` // Convertido en Link para navegación
+const NavItem = styled(Link)`
   margin: 0 1rem;
   font-size: 1rem;
   color: #fff;
@@ -64,24 +66,31 @@ const SearchIcon = styled(FaSearch)`
 `;
 
 const Header = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const toggleLogin = () => {
+    setIsLoginOpen(!isLoginOpen);
+  };
+
   return (
     <HeaderContainer>
       <Nav>
-        <NavItem to="/">Inicio</NavItem> {/* Enlace a inicio */}
+        <NavItem to="/">Inicio</NavItem>
         <NavItem to="/productos">Productos</NavItem>
         <NavItem to="/contacto">Contacto</NavItem>
       </Nav>
       
-      {/* Logo con enlace al inicio */}
       <Link to="/">
         <Logo src={logo} alt="Tienda Minimalista Logo" />
       </Link>
 
       <UserCartContainer>
         <SearchIcon />
-        <UserIcon>👤</UserIcon>
+        <UserIcon onClick={toggleLogin}>👤</UserIcon>
         <CartIcon to="/cart">🛒</CartIcon>
       </UserCartContainer>
+
+      {isLoginOpen && <Login />}
     </HeaderContainer>
   );
 };

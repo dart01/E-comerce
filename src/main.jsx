@@ -5,7 +5,7 @@ import './index.css'
 import Header from './Header.jsx'
 import Propaganda from './Propaganda.jsx'
 import Tendencias from './Tendencias.jsx'
-import Footer from './Footer.jsx'
+import Footer from './Footer.jsx';
 import Whatsapp from './Whatsapp.jsx';
 import ShoppingCart from './ShoppingCart.jsx'
 
@@ -29,6 +29,7 @@ createRoot(document.getElementById('root')).render(
             <Footer />
           </>
         } />
+        
       </Routes>
     </Router>
   </StrictMode>,
