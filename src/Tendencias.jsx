@@ -1,4 +1,10 @@
 import styled from 'styled-components';
+import iconoMotor from './imagenes/iconoMotor.png';
+import iconoSuspension from './imagenes/iconoSuspension.png';
+import iconoFreno from './imagenes/iconoFreno.png';
+import iconoAccesorios from './imagenes/iconoAccesorios.png';
+import iconoElectrico from './imagenes/iconoBujia.png';
+
 
 const TendenciasContainer = styled.div`
     padding: 40px 20px;
@@ -6,12 +12,19 @@ const TendenciasContainer = styled.div`
     margin: 0 auto;
 `;
 
-const Title = styled.h2`
-    width: 100%;
+const TitleContainer = styled.div`
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+`;
+
+const Title = styled.h2`
+    display: inline-block;
     color: #333;
     font-size: 2.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #007AFF;
+    margin: 0 auto;
 `;
 
 const CategoriesGrid = styled.div`
@@ -22,6 +35,24 @@ const CategoriesGrid = styled.div`
 `;
 
 const CategoryCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 200px;
+`;
+
+const CategoryImage = styled.img`
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
+
+const ImageContainer = styled.div`
     position: relative;
     width: 200px;
     height: 200px;
@@ -36,61 +67,54 @@ const CategoryCard = styled.div`
     }
 `;
 
-const CategoryImage = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`;
-
 const CategoryName = styled.div`
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
+    color: #333;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 `;
 
 // Datos de las categorías (reemplaza las URLs con tus GIFs)
 const categories = [
     {
         name: 'Motor',
-        gif: 'https://placehold.co/200x200/gif?text=Motor'
+        gif: iconoMotor
     },
     {
         name: 'Suspensión',
-        gif: 'https://placehold.co/200x200/gif?text=Suspensión'
+        gif: iconoSuspension
     },
     {
         name: 'Frenos',
-        gif: 'https://placehold.co/200x200/gif?text=Frenos'
+        gif: iconoFreno
     },
     {
         name: 'Accesorios',
-        gif: 'https://placehold.co/200x200/gif?text=Accesorios'
+        gif: iconoAccesorios
     },
     {
         name: 'Eléctrico',
-        gif: 'https://placehold.co/200x200/gif?text=Eléctrico'
+        gif: iconoElectrico
     }
 ];
 
 const Tendencias = () => {
     return (
         <TendenciasContainer>
-            <Title>Categorías Destacadas</Title>
+            <TitleContainer>
+                <Title>Categorías Destacadas</Title>
+            </TitleContainer>
             <CategoriesGrid>
                 {categories.map((category, index) => (
                     <CategoryCard key={index}>
-                        <CategoryImage 
-                            src={category.gif} 
-                            alt={category.name}
-                            loading="lazy"
-                        />
+                        <ImageContainer>
+                            <CategoryImage 
+                                src={category.gif} 
+                                alt={category.name}
+                                loading="lazy"
+                            />
+                        </ImageContainer>
                         <CategoryName>{category.name}</CategoryName>
                     </CategoryCard>
                 ))}

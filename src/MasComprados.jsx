@@ -6,11 +6,19 @@ const ProductosContainer = styled.div`
     margin: 0 auto;
 `;
 
-const Titulo = styled.h2`
+const TituloContainer = styled.div`
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+`;
+
+const Titulo = styled.h2`
+    display: inline-block;
     color: #333;
     font-size: 2.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #007AFF;
+    margin: 0 auto;
 `;
 
 const ProductsGrid = styled.div`
@@ -21,7 +29,7 @@ const ProductsGrid = styled.div`
 `;
 
 const ProductCard = styled.div`
-    flex: 1 1 calc(33.33% - 30px);
+    flex: 1 1 calc(25% - 30px);
     max-width: 300px;
     min-width: 250px;
     height: 400px;
@@ -64,14 +72,14 @@ const ProductDescription = styled.p`
 `;
 
 const ProductPrice = styled.div`
-    color: #28a745;
+    color: #007AFF;
     font-weight: bold;
     font-size: 1.3rem;
     margin-bottom: 15px;
 `;
 
 const BuyButton = styled.button`
-    background: #28a745;
+    background: #007AFF;
     color: white;
     border: none;
     padding: 10px 25px;
@@ -127,13 +135,29 @@ const topProducts = [
         description: '4 litros + filtro',
         price: '$39.99',
         image: 'https://placehold.co/300x200?text=Aceite+Sintético'
+    },
+    {
+        id: 7,
+        name: 'Luces LED Xenon',
+        description: 'Kit completo 6000K',
+        price: '$129.99',
+        image: 'https://placehold.co/300x200?text=Luces+LED'
+    },
+    {
+        id: 8,
+        name: 'Aceite Sintético 5W-30',
+        description: '4 litros + filtro',
+        price: '$39.99',
+        image: 'https://placehold.co/300x200?text=Aceite+Sintético'
     }
 ];
 
 const MasComprados = () => {
     return (
         <ProductosContainer>
-            <Titulo>Los Más Vendidos</Titulo>
+            <TituloContainer>
+                <Titulo>Los Más Vendidos</Titulo>
+            </TituloContainer>
             <ProductsGrid>
                 {topProducts.map((product) => (
                     <ProductCard key={product.id}>
